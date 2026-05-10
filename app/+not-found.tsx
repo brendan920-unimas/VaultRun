@@ -1,17 +1,17 @@
 import { Link, Stack } from 'expo-router';
-import { StyleSheet } from 'react-native';
-
-import { Text, View } from '@/components/Themed';
+import { View, Text, StyleSheet } from 'react-native';
+import { Colors, FontSize, Spacing } from '@/constants/Colors';
 
 export default function NotFoundScreen() {
   return (
     <>
       <Stack.Screen options={{ title: 'Oops!' }} />
       <View style={styles.container}>
-        <Text style={styles.title}>This screen doesn't exist.</Text>
-
+        <Text style={styles.emoji}>⚔️</Text>
+        <Text style={styles.title}>Quest Not Found</Text>
+        <Text style={styles.subtitle}>This path leads nowhere, adventurer.</Text>
         <Link href="/" style={styles.link}>
-          <Text style={styles.linkText}>Go to home screen!</Text>
+          <Text style={styles.linkText}>← Return to Vault</Text>
         </Link>
       </View>
     </>
@@ -23,18 +23,28 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 20,
+    backgroundColor: Colors.background,
+    padding: Spacing.xxl,
   },
+  emoji: { fontSize: 64, marginBottom: Spacing.lg },
   title: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    color: Colors.text,
+    fontSize: FontSize.xxxl,
+    fontWeight: '800',
+  },
+  subtitle: {
+    color: Colors.textMuted,
+    fontSize: FontSize.md,
+    marginTop: Spacing.sm,
+    marginBottom: Spacing.xxl,
   },
   link: {
-    marginTop: 15,
-    paddingVertical: 15,
+    paddingVertical: Spacing.md,
+    paddingHorizontal: Spacing.xxl,
   },
   linkText: {
-    fontSize: 14,
-    color: '#2e78b7',
+    color: Colors.primary,
+    fontSize: FontSize.lg,
+    fontWeight: '600',
   },
 });

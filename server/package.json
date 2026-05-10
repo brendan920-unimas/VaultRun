@@ -1,0 +1,16 @@
+{
+  "name": "vaultrun-server",
+  "version": "1.0.0",
+  "description": "VaultRun backend API — mock bank + game logic + Claude AI",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "uuid": "^11.1.0"
+  }
+}
