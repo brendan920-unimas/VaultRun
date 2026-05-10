@@ -2,6 +2,7 @@ services:
   - type: web
     name: vaultrun-api
     runtime: node
+    rootDir: server
     plan: free
     buildCommand: npm install
     startCommand: node index.js
